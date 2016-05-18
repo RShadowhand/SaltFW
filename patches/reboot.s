@@ -83,7 +83,7 @@ fopen: .ascii "OPEN"
 .pool
 bin_fname:     .dcw "sdmc:/arm9loaderhax.bin"
 	       .word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-dat_fname:     .dcw "sdmc:/SaltFW.bin"
+dat_fname:     .dcw "sdmc:/SaltLite.bin"
 	       .word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
 .align 4

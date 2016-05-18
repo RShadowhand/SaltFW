@@ -11,7 +11,7 @@ AS := arm-none-eabi-as
 LD := arm-none-eabi-ld
 OC := arm-none-eabi-objcopy
 
-name := SaltFW
+name := SaltLite
 version := $(shell git describe --abbrev=0 --tags)
 
 dir_source := source
@@ -38,7 +38,7 @@ bundled = $(dir_build)/patches.h $(dir_build)/screeninit.h
 all: saltfw a9lh
 
 .PHONY: saltfw
-saltfw: $(dir_out)/SaltFW.bin
+saltfw: $(dir_out)/SaltLite.bin
 
 .PHONY: a9lh
 a9lh: $(dir_out)/arm9loaderhax.bin
@@ -58,7 +58,7 @@ $(dir_out):
 $(dir_out)/arm9loaderhax.bin: $(dir_build)/main.bin $(dir_out)
 	@cp -a $(dir_build)/main.bin $@
 
-$(dir_out)/SaltFW.bin: $(dir_build)/main.bin $(dir_out)
+$(dir_out)/SaltLite.bin: $(dir_build)/main.bin $(dir_out)
 	@cp -a $(dir_build)/main.bin $@
 
 $(dir_out)/$(name).zip: a9lh saltfw

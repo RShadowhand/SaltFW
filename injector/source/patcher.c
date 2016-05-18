@@ -518,7 +518,7 @@ void patchCode(u64 progId, u8 *code, u32 size)
         }
 
         default:
-        if(true)
+        if(false)
         {
             u32 tidHigh = (progId & 0xFFFFFFF000000000LL) >> 0x24;
 

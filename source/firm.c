@@ -64,13 +64,6 @@ void main(void)
             a9lhMode++;
             firmSource = 0;
         }
-
-        //If screens are inited or the corresponding option is set, load splash screen
-        if(PDN_GPU_CNT != 1 && loadSplash())
-        {
-            chronoStarted = 2;
-            chrono(0);
-        }
     }
 
     loadFirm(firmType, !firmType && updatedSys == !firmSource);
@@ -101,22 +94,16 @@ static inline void loadFirm(u32 firmType, u32 externalFirm)
 {
     section = firm->section;
 
-    u32 externalFirmLoaded = externalFirm &&
-                             fileRead(firm, "/firmware.bin") &&
-                             (((u32)section[2].address >> 8) & 0xFF) == (console ? 0x60 : 0x68);
-
     /* If the conditions to load the external FIRM aren't met, or reading fails, or the FIRM
        doesn't match the console, load FIRM from CTRNAND */
-    if(!externalFirmLoaded)
-    {
-        const char *firmFolders[4][2] = {{ "00000002", "20000002" },
-                                         { "00000102", "20000102" },
-                                         { "00000202", "20000202" },
-                                         { "00000003", "20000003" }};
 
-        firmRead(firm, firmFolders[firmType][console]);
-        decryptExeFs((u8 *)firm);
-    }
+    const char *firmFolders[4][2] = {{ "00000002", "20000002" },
+                                     { "00000102", "20000102" },
+                                     { "00000202", "20000202" },
+                                     { "00000003", "20000003" }};
+
+    firmRead(firm, firmFolders[firmType][console]);
+    decryptExeFs((u8 *)firm);
 }
 
 static inline void patchNativeFirm(u32 a9lhMode)
