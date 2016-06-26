@@ -88,9 +88,9 @@ payload_maxsize equ 0x20000   ; Maximum size for the payload (200 KB will do).
 bytes_read: .word 0
 fopen: .ascii "OPEN"
 .pool
-bin_fname:     .dcw "sdmc:/homebrew/SaltFW.bin"
+bin_fname:     .dcw "sdmc:/homebrew/3ds/SaltFW.bin"
 	       .word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-dat_fname:     .dcw "sdmc:/homebrew/boot.bin"
+dat_fname:     .dcw "sdmc:/homebrew/3ds/boot.bin"
 	       .word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 dat_lfile:     .dcw "sdmc:/arm9loaderhax.bin"
 	       .word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0

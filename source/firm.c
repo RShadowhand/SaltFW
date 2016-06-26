@@ -92,8 +92,8 @@ static inline void loadFirm(u32 firmType, u32 externalFirm)
 {
     section = firm->section;
 
-    char homebrew[] = "/homebrew/firmware.bin";
-    char saltfw[] = "/homebrew/SaltFW/firmware.bin";
+    char homebrew[] = "/homebrew/3ds/firmware.bin";
+    char saltfw[] = "/homebrew/3ds/SaltFW/firmware.bin";
     char* firmwarePath;
 
     if(fileRead(firm, homebrew) > 0){
