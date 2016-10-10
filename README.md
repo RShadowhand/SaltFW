@@ -18,27 +18,27 @@ Slim Alternative Firmware for 3DS!
 
 ### How to install standalone:
 1. **FOR A9LH**: Drop `arm9loaderhax.bin` to the root of your SD.
-2. **FOR ShadowNAND**: Drop `boot.bin` to `SD:/homebrew/3ds/`
+2. **FOR ShadowNAND**: Drop `boot.bin` to the root of your SD.
 3. DONE!
 
 ### How to install and use with a bootmanager:
-1. Drop `SaltFW.bin` to `SD:/homebrew/3ds/`.
-2. Set your choice of bootmanager to load `/homebrew/3ds/SaltFW.bin` as default.
+1. Drop `SaltFW.bin` to `SD:/ShadowNAND/`. **OR** drop `boot.bin` to either `SD:/ShadowNAND/` or SD root.
+2. Set your choice of bootmanager to load the file as default.
 3. DONE!
 
 ### How to use splash/bootlogo
-1. Create `homebrew/3ds/SaltFW/` folder in the root of your SD.
-2. Put `splash.bin` **OR** `splashbottom.bin` **OR** **BOTH** in `homebrew/3ds/SaltFW/` folder
+1. Create `ShadowNAND/` folder in the root of your SD.
+2. Put `splash.bin` **OR** `splashbottom.bin` **OR** **BOTH** in `ShadowNAND/` folder
 3. DONE!
 
 ### How to use `firmware.bin`
 1. Download [this](http://www70.zippyshare.com/v/Fbj6n1vB/file.html).
-2. Put `firmware.bin` from the folder for your device, to `SD:/homebrew/3ds` OR `SD:/homebrew/3ds/SaltFW/`.
+2. Put `firmware.bin` from the folder for your device, to `SD:/ShadowNAND`.
 3. DONE!
 
 ### How to use Region/Language emulation
-1. Create `/homebrew/3ds/SaltFW` folder in the root of your SD.
-2. Create `locales` folder in `SaltFW`.
+1. Create `/ShadowNAND/` folder in the root of your SD.
+2. Create `_locales` folder in `ShadowNAND`.
 3. Create a `txt` file titleID of the game you want to edit. (e.g. `0004000000055E00.txt`)
 4. Inside the file, put `RGN LN` where RGN is the region code, and LN is the language code. (e.g. `JPN JP`)
 5. DONE!
